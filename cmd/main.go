@@ -3,10 +3,24 @@ package main
 import (
 	"fmt"
 	"simplebattle/combat"
+	"simplebattle/command"
 )
+
+var characters []combat.IDamagable
 
 func Log(logable combat.ILogable) {
 	fmt.Println(logable.GetInformation())
+}
+
+func ExecuteCommand(cmd command.ICommand) {
+	cmd.Execute()
+	if(characters == nil) {
+		return;
+	}
+
+	for _, character := characters {
+		Log(character)
+	}
 }
 
 func main() {
@@ -16,7 +30,7 @@ func main() {
 		Atk:  3,
 		Def:  1,
 	}
-	playerB := combat.Character{
+	playerB := combat.Monster{
 		Name: "Slime",
 		Hp:   5,
 		Atk:  1,
