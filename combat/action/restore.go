@@ -1,12 +1,12 @@
-package combat
+package action
 
 import (
-	"simplebattle/combat"
+	components "simplebattle/combat/components"
 )
 
 // RestoreCommand ... restore self hitpoint
 type RestoreCommand struct {
-	Self *combat.IRestorer
+	Self *components.IRestorer
 }
 
 // Execute ... execute action

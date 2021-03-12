@@ -1,2 +1,0 @@
-math.go
-- pure function

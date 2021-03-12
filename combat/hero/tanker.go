@@ -1,11 +1,12 @@
-package combat
+package hero
 
 import (
 	"fmt"
+	components "simplebattle/combat/components"
 	"simplebattle/utils"
 )
 
-type Character struct {
+type Tanker struct {
 	Name   string
 	Hp     int
 	Atk    int
@@ -14,12 +15,18 @@ type Character struct {
 }
 
 // Attack ... may mutant character data then we use pointer reciever
-func (character *Character) Attack(target IDamagable) {
+func (character *Tanker) Attack(target components.IDamagable) {
 	target.TakeDamage(character, character.Atk)
 }
 
+// Attack ... may mutant character data then we use pointer reciever
+func (character *Tanker) Defense() {
+	character.Immune = true
+	fmt.Println("cast defense")
+}
+
 // TakeDamage ... may mutant character data then we use pointer reciever
-func (character *Character) TakeDamage(attacker IDamagable, damage int) {
+func (character *Tanker) TakeDamage(attacker components.IDamagable, damage int) {
 	finalDamage := damage - character.Def
 	finalDamage = utils.Max(finalDamage, 0)
 	if character.Immune && finalDamage > 0 {
@@ -34,10 +41,11 @@ func (character *Character) TakeDamage(attacker IDamagable, damage int) {
 }
 
 // GetInformation ...  no need to mutant data then we use value reciever
-func (character Character) GetInformation() string {
-	return fmt.Sprintf("%s\t | HP: %d, ATK: %d, DEF: %d",
+func (character Tanker) GetInformation() string {
+	return fmt.Sprintf("%s\t | HP: %d, ATK: %d, DEF: %d, immune: %t",
 		character.Name,
 		character.Hp,
 		character.Atk,
-		character.Def)
+		character.Def,
+		character.Immune)
 }

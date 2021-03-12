@@ -1,12 +1,12 @@
-package combat
+package action
 
 import (
-	"simplebattle/combat"
+	components "simplebattle/combat/components"
 )
 
 // DefenseCommand ... use for increase self defense power
 type DefenseCommand struct {
-	Self *combat.IDefender
+	Self *components.IDefender
 }
 
 // Execute ... execute action

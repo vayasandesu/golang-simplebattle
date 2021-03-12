@@ -1,11 +1,11 @@
-package command
+package action
 
-import "simplebattle/combat"
+import components "simplebattle/combat/components"
 
 // AttackCommand ... use for execute attack of Attacker to Target
 type AttackCommand struct {
-	Attacker *combat.IAttacker
-	Target   *combat.IDamagable
+	Attacker *components.IAttacker
+	Target   *components.IDamagable
 }
 
 // Execute ... execute action

@@ -1,4 +1,4 @@
-package combat
+package components
 
 /* Best practies : interface should suffix with -er */
 
@@ -16,8 +16,4 @@ type IAttacker interface {
 
 type IRestorer interface {
 	Restore()
-}
-
-type ILogable interface {
-	GetInformation() string
 }
