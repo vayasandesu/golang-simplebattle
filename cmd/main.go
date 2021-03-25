@@ -1,9 +1,18 @@
 package main
 
 import "fmt"
+func Increment(value *int) {
+	*value += 1
+}
 
 func main() {
 	fmt.Printf("hi")
+
+func PointerFunctionRunner() {
+	value := 20
+	Increment(&value)
+	fmt.Println(value)
+}
 func GachaponRunner() {
 	fmt.Println("Gachapox generator")
 	fmt.Println("Item should be empty after 10 roll")
