@@ -6,13 +6,13 @@ func increment(value *int) {
 	*value += 1
 }
 
-func PointerFunctionRunner() {
+func FunctionPointerRunner() {
 	value := 20
 	increment(&value)
 	fmt.Println(value)
 }
 
-func PointerRunner() {
+func VariablePointerTypeRunner() {
 	original := 1
 	cloner := &original
 
@@ -24,7 +24,7 @@ func PointerRunner() {
 	fmt.Printf("cloner : %d\n", *cloner)
 }
 
-func ValueRunner() {
+func VariableValueTypeRunner() {
 	original := 1
 	cloner := original
 	cloner += 10

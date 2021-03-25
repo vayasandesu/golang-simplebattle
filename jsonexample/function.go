@@ -5,7 +5,7 @@ import (
 )
 
 func Serialize(obj JsonStruct) string {
-	text, err := json.Marshal(&obj)
+	text, err := json.Marshal(obj)
 	if err != nil {
 		return ""
 	}

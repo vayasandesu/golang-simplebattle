@@ -17,6 +17,7 @@ func main() {
 	// Json
 	scenario.SerializeObjectRunner()
 	scenario.DeserializeObjectRunner()
+	scenario.DeserializeObjectWithWrongJsonKeyRunner()
 	scenario.DeserializeUnknowStruct()
 
 }

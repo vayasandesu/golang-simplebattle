@@ -67,17 +67,17 @@ func generateGachapox() gachapon.IGachaponer {
 func GachaponRunner() {
 	fmt.Println("Gachapox generator")
 	fmt.Println("Item should be empty after 10 roll")
-	gachaponer := scenario.GenerateGachapox()
+	gachaponer := generateGachapox()
 	for i := 1; i <= 15; i++ {
-		item := scenario.RNG(gachaponer)
+		item := rng(gachaponer)
 		fmt.Printf("Gachapon random %d got %+v\n", i, item)
 	}
 
 	fmt.Println("Gachapin generator")
 	fmt.Println("Alway get item")
-	gachaponer = scenario.GenerateGachapin()
+	gachaponer = generateGachapin()
 	for i := 1; i <= 15; i++ {
-		item := scenario.RNG(gachaponer)
+		item := rng(gachaponer)
 		fmt.Printf("Gachapin random %d got %+v\n", i, item)
 	}
 }

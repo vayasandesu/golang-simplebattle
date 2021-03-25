@@ -26,6 +26,16 @@ func DeserializeObjectRunner() {
 	fmt.Println("=======================")
 }
 
+func DeserializeObjectWithWrongJsonKeyRunner() {
+	text := `{"Name" : "benten", "Age" : 88 }`
+	obj := jsonexample.Deserialize(text)
+
+	fmt.Println("Deserialize object runner")
+	fmt.Println(obj)
+	fmt.Println("Name property not deserialize because JSON name is MyName")
+	fmt.Println("=======================")
+}
+
 func DeserializeUnknowStruct() {
 	var result map[string]interface{}
 	jsonText := `{
