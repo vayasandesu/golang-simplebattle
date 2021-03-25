@@ -1,7 +1,7 @@
 package main
 
 import (
-	"simplebattle/scenario"
+	"simplebattle/webapp"
 )
 
 func main() {
@@ -24,5 +24,7 @@ func main() {
 	//scenario.GoSleepRunner()
 	//scenario.GoChannelRunner()
 
-	scenario.EventListenerRunner()
+	//scenario.EventListenerRunner()
+
+	webapp.Start()
 }
