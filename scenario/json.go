@@ -47,7 +47,7 @@ func DeserializeUnknowStruct() {
 		}
 	}`
 
-	json.Unmarshal([]byte(jsonText), &result)
+	err := json.Unmarshal([]byte(jsonText), &result)
 
 	fmt.Println("Deserialize unknow struct object runner")
 	fmt.Println(result)
