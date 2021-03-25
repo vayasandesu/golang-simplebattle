@@ -2,6 +2,16 @@ package scenario
 
 import "fmt"
 
+func increment(value *int) {
+	*value += 1
+}
+
+func PointerFunctionRunner() {
+	value := 20
+	increment(&value)
+	fmt.Println(value)
+}
+
 func PointerRunner() {
 	original := 1
 	cloner := &original

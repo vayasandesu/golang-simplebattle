@@ -8,11 +8,11 @@ import (
 	"simplebattle/gachapon/gachapox"
 )
 
-func RNG(gacha gachapon.IGachaponer) gachapon.Item {
+func rng(gacha gachapon.IGachaponer) gachapon.Item {
 	return gacha.Random()
 }
 
-func GenerateGachapin() gachapon.IGachaponer {
+func generateGachapin() gachapon.IGachaponer {
 	slots := make([]gachapin.GachapinSlot, 5)
 	slots[0] = gachapin.GachapinSlot{
 		ProductName: "BITCOIN",
@@ -47,7 +47,7 @@ func GenerateGachapin() gachapon.IGachaponer {
 	return &gacha
 }
 
-func GenerateGachapox() gachapon.IGachaponer {
+func generateGachapox() gachapon.IGachaponer {
 	itembox := make([]gachapox.GachapoxSlot, 10)
 	for i := 0; i < 10; i++ {
 		itembox[i] = gachapox.GachapoxSlot{
@@ -62,4 +62,22 @@ func GenerateGachapox() gachapon.IGachaponer {
 	gacha.Reset()
 
 	return &gacha
+}
+
+func GachaponRunner() {
+	fmt.Println("Gachapox generator")
+	fmt.Println("Item should be empty after 10 roll")
+	gachaponer := scenario.GenerateGachapox()
+	for i := 1; i <= 15; i++ {
+		item := scenario.RNG(gachaponer)
+		fmt.Printf("Gachapon random %d got %+v\n", i, item)
+	}
+
+	fmt.Println("Gachapin generator")
+	fmt.Println("Alway get item")
+	gachaponer = scenario.GenerateGachapin()
+	for i := 1; i <= 15; i++ {
+		item := scenario.RNG(gachaponer)
+		fmt.Printf("Gachapin random %d got %+v\n", i, item)
+	}
 }
