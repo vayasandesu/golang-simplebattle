@@ -18,8 +18,8 @@ type Gachapox struct {
 
 func RemoveAt(array []GachapoxSlot, index int) []GachapoxSlot {
 	output := append(array[:index], array[index+1:]...)
-	return output
 
+	return output
 }
 
 func (gacha *Gachapox) Random() gachapon.Item {
